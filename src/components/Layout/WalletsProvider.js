@@ -1,12 +1,8 @@
 import Metamask from '@/assets/Layout/Metamask.svg';
 import Trust from '@/assets/Layout/Trust.svg';
 import WalletConnect from '@/assets/Layout/WalletConnect.svg';
-import Coinbase from '@/assets/Layout/Coinbase.svg';
-import TokenPocket from '@/assets/Layout/Coinbase.svg';
-import Binance from '@/assets/Layout/Binance.svg';
-import Math from '@/assets/Layout/Math.svg';
-import Brave from '@/assets/Layout/Brave.svg';
-import Argent from '@/assets/Layout/Argent.svg';
+import TokenPocket from '@/assets/Layout/TokenPocket.svg';
+
 
 const WalletProvider = [
   {
@@ -25,31 +21,6 @@ const WalletProvider = [
     title: 'Token Pocket',
     icon: <TokenPocket />,
   },
-  // {
-  //   title: 'Coinbase Wallet',
-  //   icon: <Coinbase />,
-  //   disabled: true,
-  // },
-  // {
-  //   title: 'Binance',
-  //   icon: <Binance />,
-  //   disabled: true,
-  // },
-  // {
-  //   title: 'Math Wallet',
-  //   icon: <Math />,
-  //   disabled: true,
-  // },
-  // {
-  //   title: 'Brave Wallet',
-  //   icon: <Brave />,
-  //   disabled: true,
-  // },
-  // {
-  //   title: 'Argent Wallet',
-  //   icon: <Argent />,
-  //   disabled: true,
-  // },
 ];
 
 export default WalletProvider;

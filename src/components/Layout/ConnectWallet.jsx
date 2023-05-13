@@ -30,7 +30,7 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
           <div className='fixed inset-0 bg-[#050033] bg-opacity-60' />
         </Transition.Child>
 
-        <div className='fixed inset-0 overflow-y-auto'>
+        <div className='fixed inset-0 lg:overflow-y-auto mx-4'>
           <div className='flex min-h-full items-center justify-center'>
             <Transition.Child
               as={Fragment}
@@ -40,7 +40,7 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
               leave='ease-in duration-200'
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
-              <Dialog.Panel className='flex flex-col text-B0 w-full max-w-[722px] min-h-[687px] transform overflow-hidden bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% border-[3px] border-[#302D59] rounded-[32px] px-8 pt-8 pb-6 transition-all relative'>
+              <Dialog.Panel className='flex flex-col text-B0 w-full max-w-[722px] lg:min-h-[687px] transform overflow-hidden bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% border-[3px] border-[#302D59] rounded-[32px] px-4 md:px-8 pt-8 pb-6 transition-all relative'>
                 <AiOutlineClose
                   onClick={() => setWalletDialog(false)}
                   className='text-lg absolute top-9 right-9 cursor-pointer'
@@ -53,20 +53,20 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
                     Select a wallet from the list of supported wallets.
                   </p>
                 </div>
-                <div className='border-[#302D59] border my-8' />
+                <div className='border-[#302D59] border my-4 md:my-8' />
                 <div className='flex flex-1 flex-col justify-between'>
                   <div>
                     <h3 className='text-lg font-medium leading-6 cursor-pointer'>
                       Choose Wallet
                     </h3>
-                    <div className='flex flex-wrap gap-5 mt-4 mb-10'>
+                    <div className='flex justify-center sm:justify-start flex-wrap gap-3 md:gap-5 mt-4 mb-10'>
                       {WalletProvider.map(({ title, icon }, index) => (
                         <button
                           key={index}
                           onClick={handleActiveWallet(index)}
-                          className='flex flex-col items-center gap-y-3 text-base pt-4 pb-2 w-[204px] border-2 border-[#0157FF] rounded-xl bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% relative hover:scale-105 duration-300'>
+                          className='flex flex-col items-center gap-y-3 text-base pt-4 pb-2 w-28 md:w-40 lg:w-[204px] border-2 border-[#0157FF] rounded-xl bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% relative lg:hover:scale-105 duration-300'>
                           {icon}
-                          <p className='text-[20px] font-medium'>{title}</p>
+                          <p className='text-xs sm:text-sm lg:text-[20px] font-medium'>{title}</p>
                           {active === index && (
                             <TbCircleCheckFilled className='absolute top-4 right-4 text-[#10B981]' />
                           )}

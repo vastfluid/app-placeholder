@@ -22,9 +22,24 @@ const Footer = ({ open, setOpen }) => {
         className={`flex gap-2 duration-100 cursor-pointer ${
           !open && 'scale-0'
         }`}>
-        <Twitter />
-        <Discord />
-        <Medium />
+        <a
+          href='http://twitter.com/vastfluid'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <Twitter />
+        </a>
+        <a
+          href='https://discord.gg/EQd4cGjzsk'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <Discord />
+        </a>
+        <a
+          href='https://vastfluid.medium.com/'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <Medium />
+        </a>
       </span>
     </div>
   );
