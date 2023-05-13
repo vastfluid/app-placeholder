@@ -47,7 +47,10 @@ const Menu = ({ open, toggleMenu }) => {
     <div className='w-full overflow-y-scroll overflow-hidden flex-1 pl-4 pr-4 lg:pl-5 my-4 mr-0.5'>
       <ul>
         {Menus.map(
-          ({ id, title, href, icon, submenu, submenuItems }, index) => {
+          (
+            { id, title, href, hasLink, icon, submenu, submenuItems },
+            index
+          ) => {
             const isActive =
               href === pathname ||
               (submenuItems &&
@@ -55,33 +58,69 @@ const Menu = ({ open, toggleMenu }) => {
 
             return (
               <span key={id}>
-                <Link
-                  href={href}
-                  onClick={!submenuItems && toggleMenu}
-                  className={`${
-                    isActive ? 'bg-Primary' : ''
-                  } text-B0 text-sm flex justify-center items-center lg:hover:bg-PrimaryHover cursor-pointer mt-3 rounded-md transition-all ease-in-out duration-300`}>
-                  <span
-                    onClick={() => handleSubmenuClick(index)}
-                    className='text-lg px-3 py-2 block float-left'>
-                    {icon}
-                  </span>
-                  <span
-                    onClick={() => handleSubmenuClick(index)}
-                    className={`text-sm flex-1 duration-200 py-2 ${
-                      !open && 'hidden'
-                    }`}>
-                    {title}
-                  </span>
-                  {submenu && open && (
-                    <BsChevronDown
+                {hasLink !== false ? (
+                  <Link
+                    href={href}
+                    className={`${
+                      isActive ? 'bg-Primary' : ''
+                    } text-B0 text-sm flex justify-center items-center lg:hover:bg-PrimaryHover cursor-pointer mt-3 rounded-md transition-all ease-in-out duration-300`}>
+                    <div
+                      onClick={
+                        submenuItems
+                          ? () => handleSubmenuClick(index)
+                          : toggleMenu
+                      }
+                      className='text-lg px-3 py-2 block float-left'>
+                      {icon}
+                    </div>
+                    <div
+                      onClick={
+                        submenuItems
+                          ? () => handleSubmenuClick(index)
+                          : toggleMenu
+                      }
+                      className={`text-sm flex-1 duration-200 py-2 ${
+                        !open && 'hidden'
+                      }`}>
+                      {title}
+                    </div>
+                    {submenu && open && (
+                      <BsChevronDown
+                        onClick={() => handleSubmenuClick(index)}
+                        className={`duration-500 mr-2 transform ${
+                          isRotated[index] ? 'rotate-180' : ''
+                        }`}
+                      />
+                    )}
+                  </Link>
+                ) : (
+                  <div
+                    className={`${
+                      isActive ? 'bg-Primary' : ''
+                    } text-B0 text-sm flex justify-center items-center lg:hover:bg-PrimaryHover cursor-pointer mt-3 rounded-md transition-all ease-in-out duration-300`}>
+                    <div
                       onClick={() => handleSubmenuClick(index)}
-                      className={`duration-500 mr-2 transform ${
-                        isRotated[index] ? 'rotate-180' : ''
-                      }`}
-                    />
-                  )}
-                </Link>
+                      className='text-lg px-3 py-2 block float-left'>
+                      {icon}
+                    </div>
+                    <div
+                      onClick={() => handleSubmenuClick(index)}
+                      className={`text-sm flex-1 duration-200 py-2 ${
+                        !open && 'hidden'
+                      }`}>
+                      {title}
+                    </div>
+                    {submenu && open && (
+                      <BsChevronDown
+                        onClick={() => handleSubmenuClick(index)}
+                        className={`duration-500 mr-2 transform ${
+                          isRotated[index] ? 'rotate-180' : ''
+                        }`}
+                      />
+                    )}
+                  </div>
+                )}
+
                 {submenu && submenuOpenArray[index] && open && (
                   <ul
                     ref={(el) => (submenuRefs.current[index] = el)}

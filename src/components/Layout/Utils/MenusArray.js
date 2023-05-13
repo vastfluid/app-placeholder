@@ -12,7 +12,8 @@ const Menus = [
   {
     id: 2,
     title: 'Trade',
-    href: {},
+    hasLink: false,
+    href: '#',
     icon: <MdCurrencyExchange />,
     submenu: true,
     submenuItems: [
@@ -24,7 +25,8 @@ const Menus = [
   {
     id: 3,
     title: 'Earn',
-    href: {},
+    hasLink: false,
+    href: '#',
     icon: <GiFarmer />,
     submenu: true,
     submenuItems: [
@@ -36,7 +38,8 @@ const Menus = [
   {
     id: 4,
     title: 'Governance',
-    href: {},
+    hasLink: false,
+    href: '#',
     icon: <RiGovernmentLine />,
     submenu: true,
     submenuItems: [
@@ -54,7 +57,8 @@ const Menus = [
   {
     id: 7,
     title: 'More',
-    href: {},
+    hasLink: false,
+    href: '#',
     icon: <MdMoreVert />,
     submenu: true,
     submenuItems: [
