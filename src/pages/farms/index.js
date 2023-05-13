@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Farms from '@/components/Farms/Farms';
 
 const index = () => {
   return (
