@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scale-0 {
+  transform: scale(0);
+}
+.scale-100 {
+  transform: scale(1);
+}
+
+@layer base {
+  html {
+    font-family: DM Sans, sans-serif;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #050033;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  background-color: #050033;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: linear-gradient(
+    269.2deg,
+    #4dbad6 13.54%,
+    #348cf4 50.52%,
+    #7b48e8 85.94%
+  );
+}
+
+.invisible-scroll::-webkit-scrollbar {
+  background-color: none;
+  width: 0;
+}
+
+.background-overlay {
+  background: linear-gradient(180deg, rgba(18, 21, 38, 0) 4.88%, #121526 100%),
+    radial-gradient(
+      50% 50% at 50% 50%,
+      #464c78 0%,
+      #454b77 31.27%,
+      #373d66 46.34%,
+      #2e3259 63.27%,
+      #2b2f54 70.87%,
+      #202446 83.85%,
+      #1e2038 100%
+    );
+  opacity: 0.9;
+}
+
