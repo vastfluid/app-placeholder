@@ -1,5 +1,6 @@
-import ComingSoon from '@/components/ComingSoon';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+const ComingSoon = dynamic(() => import('@/components/ComingSoon'));
 
 const index = () => {
   return (

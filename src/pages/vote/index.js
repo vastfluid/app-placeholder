@@ -1,6 +1,6 @@
-import ComingSoon from '@/components/ComingSoon';
+import dynamic from 'next/dynamic';
+const ComingSoon = dynamic(() => import('@/components/ComingSoon'));
 import Head from 'next/head';
-import React from 'react';
 
 const index = () => {
   return (
