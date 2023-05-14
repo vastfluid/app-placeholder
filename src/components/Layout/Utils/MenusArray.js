@@ -19,7 +19,12 @@ const Menus = [
     submenuItems: [
       { id: 1, title: 'Swap', href: '/swap' },
       { id: 2, title: 'Limit Order', href: '/limit' },
-      { id: 3, title: 'Bridge', href: 'https://google.com', external: true },
+      {
+        id: 3,
+        title: 'Bridge',
+        href: 'https://bridge.arbitrum.io',
+        external: true,
+      },
     ],
   },
   {
@@ -43,7 +48,7 @@ const Menus = [
     icon: <RiGovernmentLine />,
     submenu: true,
     submenuItems: [
-      { id: 2, title: 'Vest', href: '/vest' },
+      { id: 2, title: 'Stake', href: '/stake' },
       { id: 1, title: ' Vote', href: '/vote' },
     ],
   },
