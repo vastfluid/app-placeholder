@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Mobile from './Mobile/Mobile';
 import MenuIcon from '@/assets/Navbar/MenuIcon.svg';
 import Web from './Web/Web';
@@ -13,6 +14,16 @@ const Layout = (props) => {
   const toggleMenu = () => {
     showMenu && setActive(true);
     setShowMenu((prev) => !prev);
+  };
+
+  const RouteGroup = ({ routes, label }) => {
+    const { pathname } = useRouter();
+
+    return routes.some((route) => pathname.startsWith(route)) ? (
+      <p className='hidden lg:block text-xl font-medium pl-4 duration-300 float-left'>
+        {label}
+      </p>
+    ) : null;
   };
 
   return (
@@ -30,7 +41,14 @@ const Layout = (props) => {
         <div className='w-full text-white h-screen z-30 relative'>
           <div className='bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% flex lg:block justify-between items-center py-2.5 lg:pt-4 px-4 border-b lg:border-none border-[#3B3B3B] lg:bg-none overflow-hidden'>
             <MenuIcon onClick={toggleMenu} className='lg:hidden' />
-
+            <RouteGroup
+              routes={['/swap', '/limit', '/liquidity']}
+              label='Trade'
+            />
+            <RouteGroup
+              routes={['/vote', '/bribe', '/rewards']}
+              label='Governance'
+            />
             <button
               onClick={() => {
                 setWalletDialog(true);

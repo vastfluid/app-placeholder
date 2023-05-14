@@ -1,12 +1,13 @@
+import ComingSoon from '@/components/ComingSoon';
 import Head from 'next/head';
 
 const index = () => {
   return (
     <div>
       <Head>
-        <title>VastFluid - Bribe</title>
+        <title>VastFluid - Farms</title>
       </Head>
-      
+      <ComingSoon />
     </div>
   );
 };

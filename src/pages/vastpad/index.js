@@ -1,3 +1,4 @@
+import ComingSoon from '@/components/ComingSoon';
 import Head from 'next/head';
 
 const index = () => {
@@ -6,6 +7,7 @@ const index = () => {
       <Head>
         <title>VastFluid - VastPad</title>
       </Head>
+      <ComingSoon />
     </div>
   );
 };

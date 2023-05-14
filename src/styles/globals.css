@@ -65,3 +65,32 @@ body {
   opacity: 0.9;
 }
 
+.border-gradient {
+  border-image: linear-gradient(98.24deg, #6ddcff 0%, #0157ff 100%) 30;
+}
+
+@media only screen and (max-width: 768px) {
+  .border-gradient {
+    border-image: none;
+    border: 1px solid #0157ff;
+  }
+}
+
+.gradient-link {
+  position: relative;
+  /* display: inline-block; */
+  overflow: hidden;
+}
+
+.gradient-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* @apply bg-gradient-to-r from-[#6ddcff] to-[#0157ff]; */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}

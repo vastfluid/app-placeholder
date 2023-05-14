@@ -41,11 +41,12 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'>
               <Dialog.Panel className='flex flex-col text-B0 w-full max-w-[722px] lg:min-h-[687px] transform overflow-hidden bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% border-[3px] border-[#302D59] rounded-[32px] px-4 md:px-8 pt-8 pb-6 transition-all relative'>
-                <AiOutlineClose
+                <span
                   onClick={() => setWalletDialog(false)}
-                  className='text-lg absolute top-9 right-9 cursor-pointer'
-                />
-                <div className=''>
+                  className='text-lg absolute top-8 right-8 cursor-pointer p-1'>
+                  <AiOutlineClose />
+                </span>
+                <div>
                   <h3 className='text-lg font-medium leading-6 cursor-pointer'>
                     Connect your wallet
                   </h3>
@@ -66,7 +67,9 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
                           onClick={handleActiveWallet(index)}
                           className='flex flex-col items-center gap-y-3 text-base pt-4 pb-2 w-28 md:w-40 lg:w-[204px] border-2 border-[#0157FF] rounded-xl bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% relative lg:hover:scale-105 duration-300'>
                           {icon}
-                          <p className='text-xs sm:text-sm lg:text-[20px] font-medium'>{title}</p>
+                          <p className='text-xs sm:text-sm lg:text-[20px] font-medium'>
+                            {title}
+                          </p>
                           {active === index && (
                             <TbCircleCheckFilled className='absolute top-4 right-4 text-[#10B981]' />
                           )}

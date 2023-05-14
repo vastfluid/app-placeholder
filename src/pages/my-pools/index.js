@@ -5,7 +5,7 @@ const index = () => {
   return (
     <div>
       <Head>
-        <title>VastFluid - Swap</title>
+        <title>VastFluid - My Pools</title>
       </Head>
       <ComingSoon />
     </div>

@@ -84,14 +84,6 @@ const Menu = ({ open, toggleMenu }) => {
                       }`}>
                       {title}
                     </div>
-                    {submenu && open && (
-                      <BsChevronDown
-                        onClick={() => handleSubmenuClick(index)}
-                        className={`duration-500 mr-2 transform ${
-                          isRotated[index] ? 'rotate-180' : ''
-                        }`}
-                      />
-                    )}
                   </Link>
                 ) : (
                   <div
@@ -111,12 +103,15 @@ const Menu = ({ open, toggleMenu }) => {
                       {title}
                     </div>
                     {submenu && open && (
-                      <BsChevronDown
+                      <span
                         onClick={() => handleSubmenuClick(index)}
-                        className={`duration-500 mr-2 transform ${
-                          isRotated[index] ? 'rotate-180' : ''
-                        }`}
-                      />
+                        className='py-3 pr-2'>
+                        <BsChevronDown
+                          className={`duration-500 transform ${
+                            isRotated[index] ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </span>
                     )}
                   </div>
                 )}
