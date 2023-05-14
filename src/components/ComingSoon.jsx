@@ -14,7 +14,7 @@ const ComingSoon = () => {
       className='px-4 overflow-y-scroll h-screen invisible-scroll'>
       <div
         id='homepage'
-        className='invisible flex flex-col lg:flex-row items-center justify-center lg:gap-12 mt-10 mb-24 lg:mb-0 lg:-mt-24 w-fit overflow-hidden'>
+        className='invisible flex flex-col lg:flex-row items-center justify-center lg:h-screen lg:w-full lg:gap-12 mt-10 mb-24 lg:mb-0 lg:-mt-24 w-fit overflow-hidden'>
         <div className='text-center lg:text-left'>
           <h1 className='text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7B48E8] from-13.54% via-[#348CF4] via-50.52% to-[#4DBAD6] to-85.94% pb-4'>
             Coming Soon!
