@@ -57,7 +57,7 @@ const Layout = (props) => {
               Connect Wallet
             </button>
           </div>
-          <section className='px-4'>{props.children}</section>
+          <section>{props.children}</section>
         </div>
       </div>
       <Background className='absolute top-0' />

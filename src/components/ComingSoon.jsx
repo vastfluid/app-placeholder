@@ -9,11 +9,13 @@ const ComingSoon = () => {
   useAnimation(homeRef);
 
   return (
-    <section ref={homeRef}>
+    <section
+      ref={homeRef}
+      className='px-4 overflow-y-scroll h-screen invisible-scroll'>
       <div
         id='homepage'
-        className='invisible flex items-center justify-center gap-12 h-screen -mt-24'>
-        <div>
+        className='invisible flex flex-col lg:flex-row items-center justify-center lg:gap-12 mt-10 mb-24 lg:mb-0 lg:-mt-24 w-fit overflow-hidden'>
+        <div className='text-center lg:text-left'>
           <h1 className='text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7B48E8] from-13.54% via-[#348CF4] via-50.52% to-[#4DBAD6] to-85.94% pb-4'>
             Coming Soon!
           </h1>
@@ -36,10 +38,13 @@ const ComingSoon = () => {
               placeholder='Enter your email address'
               className='items text-base flex-1 py-3 bg-transparent placeholder:text-[#71717A] focus:outline-none'
             />
-            <button className='items text-base text-[#18181B] font-semibold bg-B0 p-3'>
+            <button className='hidden lg:block items text-base text-[#18181B] font-semibold bg-B0 p-3'>
               NOTIFY ME
             </button>
           </span>
+          <button className='lg:hidden items text-base text-[#18181B] font-semibold bg-B0 py-3 px-5 mt-8'>
+            NOTIFY ME
+          </button>
         </div>
         <Image id='illustration' src={ComingImage} alt='ComingImage' priority />
       </div>

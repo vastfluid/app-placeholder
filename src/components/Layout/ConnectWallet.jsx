@@ -65,7 +65,7 @@ const ConnectWallet = ({ walletDialog, setWalletDialog }) => {
                         <button
                           key={index}
                           onClick={handleActiveWallet(index)}
-                          className='flex flex-col items-center gap-y-3 text-base pt-4 pb-2 w-28 md:w-40 lg:w-[204px] border-2 border-[#0157FF] rounded-xl bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% relative lg:hover:scale-105 duration-300'>
+                          className='flex flex-col items-center gap-y-3 text-base pt-4 pb-2 w-28 sm:w-32 md:w-40 lg:w-[204px] border-2 border-[#0157FF] rounded-xl bg-gradient-to-r from-[#021946] from-4.18% to-[#050033] to-101.87% relative lg:hover:scale-105 duration-300'>
                           {icon}
                           <p className='text-xs sm:text-sm lg:text-[20px] font-medium'>
                             {title}
