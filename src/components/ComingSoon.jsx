@@ -1,12 +1,26 @@
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import ComingImage from '../assets/ComingImage.png';
 import Email from '../assets/Email.svg';
-import { useRef } from 'react';
 import useAnimation from '@/hooks/useAnimation';
 
 const ComingSoon = () => {
+  const [email, setEmail] = useState('');
+
   const homeRef = useRef();
   useAnimation(homeRef);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      alert('Email Successfully Recorded');
+      setEmail('')
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
 
   return (
     <section
@@ -26,25 +40,34 @@ const ComingSoon = () => {
             Be the first to get notified when we launch. Input your email
             address to secure a spot.
           </h3>
-          <span
-            id='email'
-            className='flex items-center gap-4 max-w-lg border p-2 gradient-link border-gradient mt-7'>
-            <span className='items pl-3'>
-              <Email />
+          <form onSubmit={handleSubmit}>
+            <span
+              id='email'
+              className='flex items-center gap-4 max-w-lg border p-2 gradient-link border-gradient mt-7'>
+              <span className='items pl-3'>
+                <Email />
+              </span>
+              <input
+                type='email'
+                name='entry.1106115317'
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Enter your email address'
+                className='items text-base flex-1 py-3 bg-transparent placeholder:text-[#71717A] focus:outline-none focus:bg-transparent'
+              />
+              <button
+                type='submit'
+                className='hidden lg:block items text-base text-[#18181B] font-semibold bg-B0 p-3'>
+                NOTIFY ME
+              </button>
             </span>
-            <input
-              type='email'
-              name='email'
-              placeholder='Enter your email address'
-              className='items text-base flex-1 py-3 bg-transparent placeholder:text-[#71717A] focus:outline-none'
-            />
-            <button className='hidden lg:block items text-base text-[#18181B] font-semibold bg-B0 p-3'>
+            <button
+              type='submit'
+              className='lg:hidden items text-base text-[#18181B] font-semibold bg-B0 py-3 px-5 mt-8'>
               NOTIFY ME
             </button>
-          </span>
-          <button className='lg:hidden items text-base text-[#18181B] font-semibold bg-B0 py-3 px-5 mt-8'>
-            NOTIFY ME
-          </button>
+          </form>
         </div>
         <Image id='illustration' src={ComingImage} alt='ComingImage' priority />
       </div>
