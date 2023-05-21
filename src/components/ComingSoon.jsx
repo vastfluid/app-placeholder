@@ -7,7 +7,7 @@ import Success from './Success';
 
 const ComingSoon = () => {
   const [email, setEmail] = useState('');
-  const [showSuccess, setShowSuccess] = useState(true);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const homeRef = useRef();
